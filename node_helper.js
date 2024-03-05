@@ -14,15 +14,11 @@ module.exports = node_helper.create({
 				method: 'GET',
 				uri: afvalwijzer_url,
 			}, function (error, response, body) {
-
-
 				returnData = JSON.stringify(body.ophaaldagen);
 				//Log.info("JSON Body", JSON.stringify(body));
-
 				if (!error && response.statusCode == 200) {
 					//Log.error("JSON PARSE", JSON.parse(body))
 					returnData = JSON.parse(body);
-
 				}
 				else {
 					self.sendSocketNotification("TRASH_DATA", returnData)
