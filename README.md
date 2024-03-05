@@ -25,12 +25,14 @@ house number extention:
 			module: 'MMM-Afvalwijzer',
 			position: 'top_left',
 			config: {
+				apiKey:"{ContactMeForTheAPIKey}",
 				numberOfweeks:4,
 				houseNumber:"1",
 				postalCode:"3607LA",
 				streetName:"Valkenkamp",
 				extention:""
-},
+			}
+		},
 ```
 
 
