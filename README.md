@@ -42,6 +42,8 @@ NumberOfWeeks indicate the number of weeks you want to see the schedule in advan
 ## Sample screenshot
 <img width="337" alt="Screenshot 2024-03-05 at 20 05 04" src="https://github.com/gertperdZA/MMM-AfvalWijzer/assets/49020124/336ce1e1-4d6f-47b5-b2ec-40274de2409d">
 
+## Special Thanks
+Michael Teeuw for creating the awesome MagicMirror² project that made this module possible.
 
 
 
