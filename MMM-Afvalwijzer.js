@@ -3,7 +3,7 @@
 Module.register('MMM-Afvalwijzer', {
     defaults: {
         zipCode: "3607NR",
-        houseNr: 1173,
+        houseNr: 1,
         houseNrAddition: "",
         dateFormat: "dddd D MMMM",
         numberOfweeks:2,
