@@ -1,6 +1,6 @@
 # MMM-AfvalWijzer
 
-Afvalwijzer Trash collection module. Some of the code was copied over from the MMM-ROVA-trashcalendar repository. Not all cities in the Netherland uses the ROMA service, hence the reason why I decided to create this one. 
+Afvalwijzer Trash collection module. Some of the code was re-used from the MMM-ROVA-trashcalendar repository. Not all cities in the Netherland uses the ROMA service, hence the reason why I decided to create this one. 
 ## Dependencies
   * A [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror) installation
 
