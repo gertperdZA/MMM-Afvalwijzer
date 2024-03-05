@@ -7,7 +7,7 @@ module.exports = node_helper.create({
 		const self = this;
 
 		if (notification === "GET_TRASH_DATA") {
-			const afvalwijzer_url = 'https://api.mijnafvalwijzer.nl/webservices/appsinput/?apikey=5ef443e778f41c4f75c69459eea6e6ae0c2d92de729aa0fc61653815fbd6a8ca&method=postcodecheck&postcode=' + payload.config.postalCode + '&street=' + payload.config.streetName + '&huisnummer=' + payload.config.houseNumber + '&toevoeging=' + payload.config.extention + '&app_name=afvalwijzer&platform=web&afvaldata=2022-10-19&langs=nl&&__cf_chl_tk=YKspnxe1mVfGgdRMHr_fA_eKMJX1NdWAiRw4lWv9AjE-1709554190-0.0.1.1-1941';
+			const afvalwijzer_url = 'https://api.mijnafvalwijzer.nl/webservices/appsinput/?apikey='+payload.config.apiKey+'&method=postcodecheck&postcode=' + payload.config.postalCode + '&street=' + payload.config.streetName + '&huisnummer=' + payload.config.houseNumber + '&toevoeging=' + payload.config.extention + '&app_name=afvalwijzer&platform=web&afvaldata=2022-10-19&langs=nl&&__cf_chl_tk=YKspnxe1mVfGgdRMHr_fA_eKMJX1NdWAiRw4lWv9AjE-1709554190-0.0.1.1-1941';
 			let returnData = ""
 
 			request({
