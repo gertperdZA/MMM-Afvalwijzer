@@ -1,0 +1,20 @@
+{
+  "name": "mmm-afvalwijzer",
+  "version": "1.0.0",
+  "description": "Module for MagicMirror² to display the upcoming trashcollection days from the Afvalzijzer module.",
+  "main": "MMM-Afvalwijzer.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gertperdZA/MMM-AfvalWijzer.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "Trashcollection"
+  ],
+  "author": "GertperdZA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gertperdZA/MMM-AfvalWijzer/issues"
+  },
+  "homepage": "https://github.com/gertperdZA/MMM-AfvalWijzer#readme"
+}
