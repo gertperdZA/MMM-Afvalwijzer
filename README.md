@@ -13,7 +13,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository and install the dependencies:
 ````
-git clone https://github.com/gertperdZA/MMM-AfvalWijzer.git
+git clone https://github.com/gertperdZA/MMM-Afvalwijzer.git
 ````
 
 Add the module to the modules array in the `config/config.js` file
