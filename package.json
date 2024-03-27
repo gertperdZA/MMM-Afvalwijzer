@@ -5,7 +5,7 @@
   "main": "MMM-Afvalwijzer.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gertperdZA/MMM-AfvalWijzer.git"
+    "url": "git+https://github.com/gertperdZA/MMM-Afvalwijzer.git"
   },
   "keywords": [
     "MagicMirror",
@@ -14,7 +14,7 @@
   "author": "GertperdZA",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gertperdZA/MMM-AfvalWijzer/issues"
+    "url": "https://github.com/gertperdZA/MMM-Afvalwijzer/issues"
   },
-  "homepage": "https://github.com/gertperdZA/MMM-AfvalWijzer#readme"
+  "homepage": "https://github.com/gertperdZA/MMM-Afvalwijzer#readme"
 }
