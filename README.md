@@ -17,7 +17,7 @@ cd ~/MagicMirror/modules
 Clone this repository and install the dependencies:
 
 ```bash
-git clone https://github.com/gertperdZA/MMM-AfvalWijzer
+git clone https://github.com/gertperdZA/MMM-Afvalwijzer
 ```
 
 Add the module to the modules array in the `config/config.js` file and insert your own postal code, housenumber and, if applicable, your house number extention:
