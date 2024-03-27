@@ -27,6 +27,7 @@ Add the module to the modules array in the `config/config.js` file and insert yo
 			module: 'MMM-Afvalwijzer',
 			position: 'top_left',
 			config: {
+				title:"Trash collection days",
 				apiKey:"{ContactMeForTheAPIKey}",
 				numberOfweeks:4,
 				houseNumber:"1",
