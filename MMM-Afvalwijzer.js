@@ -23,7 +23,7 @@ Module.register('MMM-Afvalwijzer', {
       }
     },
     getHeader: function () {
-                  return "Trash collection";
+                  return this.config.title;
                  },
   
     // Start the module
