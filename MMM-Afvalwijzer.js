@@ -4,14 +4,15 @@ Module.register('MMM-Afvalwijzer', {
     defaults: {
         zipCode: "3607NR",
         houseNr: 1,
-        houseNrAddition: "",
+        extention: "",
         dateFormat: "dddd D MMMM",
         numberOfweeks: 2,
-        updateInterval: 4 * 60 * 60 * 1000 // Defaults to 4 hours
+        updateInterval: 4 * 60 * 60 * 1000, // Defaults to 4 hours
+        showCleanprofsData: false
     },
 
     start: function () {
-        this.sendSocketNotification('GET_TRASH_DATA', this.config.url);
+        this.sendSocketNotification('GET_TRASH_DATA', this.config.url)
     },
 
     socketNotificationReceived: function (notification, payload) {
@@ -37,7 +38,7 @@ Module.register('MMM-Afvalwijzer', {
 
     // Import additional CSS Styles
     getStyles: function () {
-        return ['MMM-Afvalwijzer.css']
+        return ['font-awesome.css', 'MMM-Afvalwijzer.css']
     },
 
     // Contact node_helper for the trash collection days
@@ -135,6 +136,17 @@ Module.register('MMM-Afvalwijzer', {
 
         return (svg);
     },
+    getCleanprofsIcon: function () {
+
+        let span = document.createElement("span")
+        span.classList.add("fa")
+        span.classList.add("fa-solid")
+        span.classList.add("fa-droplet")
+        span.style.color = "#2a70b8"
+        span.style.width = "24px"
+        span.style.height = "24px"
+        return (span)
+    },
     // Construct the DOM objects for this module
     getDom: function () {
         let wrapper = document.createElement("div");
@@ -144,7 +156,7 @@ Module.register('MMM-Afvalwijzer', {
             wrapper.className = "dimmed light small";
             return wrapper;
         }
-        console.log("TRASHDAYS", payloadReturn.ophaaldagen.data[0]);
+        console.log("TRASHDAYS", payloadReturn.ophaaldagen.data);
         for (i = 0; i < payloadReturn.ophaaldagen.data.length; i++) {
 
             let trashDay = payloadReturn.ophaaldagen.data[i];
@@ -177,6 +189,8 @@ Module.register('MMM-Afvalwijzer', {
 
                 let iconContainer = document.createElement("span");
                 iconContainer.classList.add("binday-icon-container");
+                if (trashDay.cleanprofs)
+                    iconContainer.appendChild(this.getCleanprofsIcon())
                 iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
 
                 pickupContainer.appendChild(iconContainer);
