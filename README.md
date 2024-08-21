@@ -44,8 +44,8 @@ Option|Default|Description
 `title`||Title of this module to show
 `apiKey`|{ContactMeForTheAPIKey}|The API key in order to retrieve the data: {ContactMeForTheAPIKey}
 `numberOfweeks`|2|Indicate the number of weeks you want to see the schedule in advance.
-`houseNumber`|`1`|House number of the address
-`postalCode`|`3607NR`|Postal code of the address
+`houseNumber`|1|House number of the address
+`postalCode`|3607NR|Postal code of the address
 `streetName`||Street name of the address
 `extention`||Housnumber addition of the address.
 `dateFormat`|dddd D MMMM|Date format 
