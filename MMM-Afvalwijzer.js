@@ -6,28 +6,28 @@ Module.register('MMM-Afvalwijzer', {
         houseNr: 1,
         houseNrAddition: "",
         dateFormat: "dddd D MMMM",
-        numberOfweeks:2,
+        numberOfweeks: 2,
         updateInterval: 4 * 60 * 60 * 1000 // Defaults to 4 hours
     },
-  
+
     start: function () {
-      this.sendSocketNotification('GET_TRASH_DATA', this.config.url);
+        this.sendSocketNotification('GET_TRASH_DATA', this.config.url);
     },
-  
+
     socketNotificationReceived: function (notification, payload) {
-      if (notification === 'DATA_RECEIVED') {
-        this.processData(payload);
-        console.log("SUCCESS",payload);
-      } else if (notification === 'DATA_ERROR') {
-        console.error('Error:', payload);
-      }
+        if (notification === 'DATA_RECEIVED') {
+            this.processData(payload);
+            console.log("SUCCESS", payload);
+        } else if (notification === 'DATA_ERROR') {
+            console.error('Error:', payload);
+        }
     },
     getHeader: function () {
-                  return this.config.title;
-                 },
-  
+        return this.config.title;
+    },
+
     // Start the module
-    start: function() {
+    start: function () {
         this.trashDays = [];
         const payloadReturn = "";
         this.loaded = false;
@@ -36,32 +36,32 @@ Module.register('MMM-Afvalwijzer', {
     },
 
     // Import additional CSS Styles
-    getStyles: function() {
+    getStyles: function () {
         return ['MMM-Afvalwijzer.css']
     },
 
     // Contact node_helper for the trash collection days
-    getTrashCollectionDays: function() {
+    getTrashCollectionDays: function () {
         this.sendSocketNotification("GET_TRASH_DATA", {
             config: this.config
         });
     },
 
     // Schedule the update interval and update
-    scheduleUpdate: function(delay) {
+    scheduleUpdate: function (delay) {
         let nextLoad = this.config.updateInterval;
         if (typeof delay !== "undefined" && delay >= 0) {
             nextLoad = delay;
         }
 
         const self = this;
-        setInterval(function() {
+        setInterval(function () {
             self.getTrashCollectionDays();
         }, nextLoad);
     },
 
     // Handle node_helper response
-    socketNotificationReceived: function(notification, payload) {
+    socketNotificationReceived: function (notification, payload) {
         if (notification === "TRASH_DATA") {
             payloadReturn = payload;
             // Logging the JavaScript object
@@ -75,7 +75,7 @@ Module.register('MMM-Afvalwijzer', {
     },
     // Create icons
     getIconByTrashtype: function (trash_type) {
-        console.log("Trashtype",trash_type);
+        console.log("Trashtype", trash_type);
 
         let color = "#64656a";
 
@@ -92,6 +92,7 @@ Module.register('MMM-Afvalwijzer', {
             case 'PLASTICPLUS':
                 color = "#e96c29";
                 break;
+            case 'papier':
             case 'papier en karton':
                 color = "#2a70b8";
                 break;
@@ -134,8 +135,8 @@ Module.register('MMM-Afvalwijzer', {
 
         return (svg);
     },
-     // Construct the DOM objects for this module
-     getDom: function() {
+    // Construct the DOM objects for this module
+    getDom: function () {
         let wrapper = document.createElement("div");
 
         if (this.loaded === false) {
@@ -143,13 +144,13 @@ Module.register('MMM-Afvalwijzer', {
             wrapper.className = "dimmed light small";
             return wrapper;
         }
-          console.log("TRASHDAYS",payloadReturn.ophaaldagen.data[0]);
+        console.log("TRASHDAYS", payloadReturn.ophaaldagen.data[0]);
         for (i = 0; i < payloadReturn.ophaaldagen.data.length; i++) {
 
             let trashDay = payloadReturn.ophaaldagen.data[i];
 
             //console.log("Trashday",trashDay.date);
-         
+
             let pickupContainer = document.createElement("div");
             pickupContainer.classList.add("binday-container");
 
@@ -159,35 +160,34 @@ Module.register('MMM-Afvalwijzer', {
             moment.locale();
             let today = moment().startOf("day");
             let pickUpDate = moment(trashDay.date);
-            if(moment(pickUpDate)>moment(today)&&moment(pickUpDate)<(moment(today).add(this.config.numberOfweeks, "weeks")))
-           {
-            if (today.isSame(pickUpDate)) {
-                dateContainer.innerHTML = "Today";
-            } else if (moment(today).add(1, "days").isSame(pickUpDate)) {
-                dateContainer.innerHTML = "Tomorrow";
-            } else if (moment(today).add(7, "days").isAfter(pickUpDate)) {
-                dateContainer.innerHTML = this.capitalize(pickUpDate.format("dddd"));
-            } else {
-               dateContainer.innerHTML = this.capitalize(pickUpDate.format(this.config.dateFormat));
+            if (moment(pickUpDate) > moment(today) && moment(pickUpDate) < (moment(today).add(this.config.numberOfweeks, "weeks"))) {
+                if (today.isSame(pickUpDate)) {
+                    dateContainer.innerHTML = "Today";
+                } else if (moment(today).add(1, "days").isSame(pickUpDate)) {
+                    dateContainer.innerHTML = "Tomorrow";
+                } else if (moment(today).add(7, "days").isAfter(pickUpDate)) {
+                    dateContainer.innerHTML = this.capitalize(pickUpDate.format("dddd"));
+                } else {
+                    dateContainer.innerHTML = this.capitalize(pickUpDate.format(this.config.dateFormat));
+                }
+
+                dateContainer.innerHTML += ": " + this.capitalize(trashDay.type);
+
+                pickupContainer.appendChild(dateContainer);
+
+                let iconContainer = document.createElement("span");
+                iconContainer.classList.add("binday-icon-container");
+                iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
+
+                pickupContainer.appendChild(iconContainer);
+                wrapper.appendChild(pickupContainer);
             }
-           
-            dateContainer.innerHTML += ": " + this.capitalize(trashDay.type);
 
-            pickupContainer.appendChild(dateContainer);
-
-            let iconContainer = document.createElement("span");
-            iconContainer.classList.add("binday-icon-container");
-            iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
-
-            pickupContainer.appendChild(iconContainer);
-            wrapper.appendChild(pickupContainer);
         }
-            
-        }
-        
+
 
         return wrapper;
-        
+
     }
-  });
-  
+});
+
