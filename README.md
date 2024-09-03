@@ -50,7 +50,7 @@ Option|Default|Description
 `houseNumber`|1|House number of the address
 `postalCode`|3607NR|Postal code of the address
 `streetName`||Street name of the address
-`extention`||Housnumber addition of the address.
+`extention`||House number addition/extention of the address.
 `dateFormat`|dddd D MMMM|Date format 
 `updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
 `showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
