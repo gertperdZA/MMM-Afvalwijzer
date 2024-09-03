@@ -33,7 +33,9 @@ Add the module to the modules array in the `config/config.js` file and insert yo
 				houseNumber:"1",
 				postalCode:"3607LA",
 				streetName:"Valkenkamp",
-				extention:""
+				extention:"",
+                                showCleanprofsData: true,
+				showColorIcons:true
 			}
 		},
 ```
