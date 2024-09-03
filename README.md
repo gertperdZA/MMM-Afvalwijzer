@@ -37,9 +37,20 @@ Add the module to the modules array in the `config/config.js` file and insert yo
 			}
 		},
 ```
+## Configuration options
 
-If you do not have an extention then just leave it blank.
-`NumberOfWeeks` indicate the number of weeks you want to see the schedule in advance.
+Option|Default|Description
+------|------|-----------
+`title`||Title of this module to show
+`apiKey`|{ContactMeForTheAPIKey}|The API key in order to retrieve the data: {ContactMeForTheAPIKey}
+`numberOfweeks`|2|Indicate the number of weeks you want to see the schedule in advance.
+`houseNumber`|1|House number of the address
+`postalCode`|3607NR|Postal code of the address
+`streetName`||Street name of the address
+`extention`||Housnumber addition of the address.
+`dateFormat`|dddd D MMMM|Date format 
+`updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
+`showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
 
 ## Sample screenshot
 
