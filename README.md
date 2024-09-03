@@ -56,7 +56,8 @@ Option|Default|Description
 
 ## Sample screenshot
 
-![screenshot](AfvalwijzerScreenshot.png)
+![image](https://github.com/user-attachments/assets/01efd7cb-b1d9-4bd8-88e1-a329a8cf25d1)
+
 
 ## Special Thanks
 
