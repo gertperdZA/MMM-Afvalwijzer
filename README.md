@@ -53,7 +53,7 @@ Option|Default|Description
 `extention`||Housnumber addition of the address.
 `dateFormat`|dddd D MMMM|Date format 
 `updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
-`showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
+`showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers (NOTE: Cleanprofs API is currently offline, if set to true it might take a while for the widget to load. For now set this value to FALSE until further notice)
 `showColorIcons`|`true`|Show icons in color when true
 
 ## Sample screenshot
