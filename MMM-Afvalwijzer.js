@@ -80,49 +80,47 @@ Module.register('MMM-Afvalwijzer', {
 
         let color = "#64656a";
 
-        switch (trash_type) {
+       switch (trash_type) {
             case 'REST':
             case 'restaval':
                 color = "#64656a";
                 break;
             case 'gft':
-                color = "#418740";
+                color = this.config.showColorIcons?"#418740":"#64656a"
                 break;
-            case 'PLASTIC':
-            case 'pmd':
             case 'pbd':
-                color = "#e96c29";
-                break;
+                color = this.config.showColorIcons?"#e96c29":"#64656a"
+            break;
             case 'papier':
             case 'papier en karton':
-                color = "#2a70b8";
+                color = this.config.showColorIcons?"#2a70b8":"#64656a"
                 break;
             case 'DHM':
-                color = "#7c6a61";
+                color = this.config.showColorIcons?"#7c6a61":"#64656a"
                 break;
             case 'BTG':
-                color = "#9a51bb";
+                color = this.config.showColorIcons?"#9a51bb":"#64656a"
                 break;
             case 'PPBTG':
-                color = "#346dc3";
+                color = this.config.showColorIcons?"#346dc3":"#64656a"
                 break;
             case 'GROF':
-                color = "#e84c5e";
+                color = this.config.showColorIcons?"#e84c5e":"#64656a"
                 break;
             case 'PTG':
-                color = "#4f936f";
+                color = this.config.showColorIcons?"#4f936f":"#64656a"
                 break;
             case 'KRINGLOOP':
-                color = "#7cbf6e";
+                color = this.config.showColorIcons?"#7cbf6e":"#64656a"
                 break;
             case 'KCA':
-                color = "#e64e61";
+                color = this.config.showColorIcons?"#e64e61":"#64656a"
                 break;
             case 'GLAS':
-                color = "#ffc729";
+                color = this.config.showColorIcons?"#ffc729":"#64656a"
                 break;
             default:
-                color = "#64656a";
+                color = this.config.showColorIcons?"#64656a":"#64656a"
                 break;
         }
 
@@ -142,7 +140,7 @@ Module.register('MMM-Afvalwijzer', {
         span.classList.add("fa")
         span.classList.add("fa-solid")
         span.classList.add("fa-droplet")
-        span.style.color = "#2a70b8"
+        span.style.color = this.config.showColorIcons?"#2a70b8":"#64656a"
         span.style.width = "24px"
         span.style.height = "24px"
         return (span)
