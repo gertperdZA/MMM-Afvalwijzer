@@ -41,7 +41,7 @@ Add the module to the modules array in the `config/config.js` file and insert yo
 		},
 ```
 ## Configuration options
-
+NOTE: When the module takes a while to load , then it might be that the CleanProfs API is down. Set the 'showCleanprofsData' to false to prevent this issue. 
 Option|Default|Description
 ------|------|-----------
 `title`||Title of this module to show
@@ -53,7 +53,7 @@ Option|Default|Description
 `extention`||Housnumber addition of the address.
 `dateFormat`|dddd D MMMM|Date format 
 `updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
-`showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers (NOTE: Cleanprofs API is currently offline, if set to true it might take a while for the widget to load. For now set this value to FALSE until further notice)
+`showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
 `showColorIcons`|`true`|Show icons in color when true
 
 ## Sample screenshot
