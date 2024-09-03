@@ -90,7 +90,7 @@ Module.register('MMM-Afvalwijzer', {
                 break;
             case 'PLASTIC':
             case 'pmd':
-            case 'PLASTICPLUS':
+            case 'pbd':
                 color = "#e96c29";
                 break;
             case 'papier':
