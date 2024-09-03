@@ -53,10 +53,16 @@ Option|Default|Description
 `dateFormat`|dddd D MMMM|Date format 
 `updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
 `showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
+`showColorIcons`|`true`|Show icons in color when true
 
 ## Sample screenshot
 
 ![image](https://github.com/user-attachments/assets/01efd7cb-b1d9-4bd8-88e1-a329a8cf25d1)
+
+Or 
+
+![image](https://github.com/user-attachments/assets/4f4286c1-bd32-4eea-9b65-6a6e9a8b3252)
+
 
 
 ## Special Thanks
