@@ -189,7 +189,10 @@ Module.register('MMM-Afvalwijzer', {
                 iconContainer.classList.add("binday-icon-container");
                 if (trashDay.cleanprofs)
                     iconContainer.appendChild(this.getCleanprofsIcon())
+                if(this.config.showContainerIcons)
+                {
                 iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
+                }
 
                 pickupContainer.appendChild(iconContainer);
                 wrapper.appendChild(pickupContainer);
