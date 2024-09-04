@@ -36,7 +36,8 @@ Add the module to the modules array in the `config/config.js` file and insert yo
 				streetName:"Valkenkamp",
 				extention:"",
                                 showCleanprofsData: true,
-				showColorIcons:true
+				showColorIcons:true,
+				showContainerIcons:true
 			}
 		},
 ```
@@ -55,6 +56,7 @@ Option|Default|Description
 `updateInterval`|4 * 60 * 60 * 1000|How often should the data be retrieved
 `showCleanprofsData`|`false`|Retrieve the dates that Clean Profs will clean the containers
 `showColorIcons`|`true`|Show icons in color when true
+`showContainerIcons`|`true`|Show container icons when true
 
 ## Sample screenshot
 
