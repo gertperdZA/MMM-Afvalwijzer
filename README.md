@@ -72,9 +72,13 @@ Or
 
 
 
-
-
-
 ## Special Thanks
 
 Michael Teeuw for creating the awesome MagicMirror² project that made this module possible.
+
+## Support
+If you like this module and want to thank me, please buy me a coffee.
+
+<a href="https://www.buymeacoffee.com/gertperdza" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 180px !important;" ></a>
+
+
