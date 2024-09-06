@@ -170,7 +170,7 @@ Module.register('MMM-Afvalwijzer', {
             moment.locale();
             let today = moment().startOf("day");
             let pickUpDate = moment(trashDay.date);
-            if (moment(pickUpDate) > moment(today) && moment(pickUpDate) < (moment(today).add(this.config.numberOfweeks, "weeks"))) {
+            if (moment(pickUpDate) >= moment(today) && moment(pickUpDate) < (moment(today).add(this.config.numberOfweeks, "weeks"))) {
                 if (today.isSame(pickUpDate)) {
                     dateContainer.innerHTML = "Today";
                 } else if (moment(today).add(1, "days").isSame(pickUpDate)) {
