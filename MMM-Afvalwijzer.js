@@ -91,6 +91,7 @@ Module.register('MMM-Afvalwijzer', {
                 color = this.config.showColorIcons ? "#418740" : "#64656a"
                 break;
             case 'pbd':
+            case 'pmd':
                 color = this.config.showColorIcons ? "#e96c29" : "#64656a"
                 break;
             case 'papier':
