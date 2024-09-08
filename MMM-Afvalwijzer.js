@@ -8,7 +8,9 @@ Module.register('MMM-Afvalwijzer', {
         dateFormat: "dddd D MMMM",
         numberOfweeks: 2,
         updateInterval: 4 * 60 * 60 * 1000, // Defaults to 4 hours
-        showCleanprofsData: false
+        showCleanprofsData: false,
+        showColorIcons: true,
+        showContainerIcons: true,
     },
 
     start: function () {
@@ -80,47 +82,48 @@ Module.register('MMM-Afvalwijzer', {
 
         let color = "#64656a";
 
-       switch (trash_type) {
+        switch (trash_type) {
             case 'REST':
             case 'restaval':
                 color = "#64656a";
                 break;
             case 'gft':
-                color = this.config.showColorIcons?"#418740":"#64656a"
+                color = this.config.showColorIcons ? "#418740" : "#64656a"
                 break;
             case 'pbd':
-                color = this.config.showColorIcons?"#e96c29":"#64656a"
-            break;
+            case 'pmd':
+                color = this.config.showColorIcons ? "#e96c29" : "#64656a"
+                break;
             case 'papier':
             case 'papier en karton':
-                color = this.config.showColorIcons?"#2a70b8":"#64656a"
+                color = this.config.showColorIcons ? "#2a70b8" : "#64656a"
                 break;
             case 'DHM':
-                color = this.config.showColorIcons?"#7c6a61":"#64656a"
+                color = this.config.showColorIcons ? "#7c6a61" : "#64656a"
                 break;
             case 'BTG':
-                color = this.config.showColorIcons?"#9a51bb":"#64656a"
+                color = this.config.showColorIcons ? "#9a51bb" : "#64656a"
                 break;
             case 'PPBTG':
-                color = this.config.showColorIcons?"#346dc3":"#64656a"
+                color = this.config.showColorIcons ? "#346dc3" : "#64656a"
                 break;
             case 'GROF':
-                color = this.config.showColorIcons?"#e84c5e":"#64656a"
+                color = this.config.showColorIcons ? "#e84c5e" : "#64656a"
                 break;
             case 'PTG':
-                color = this.config.showColorIcons?"#4f936f":"#64656a"
+                color = this.config.showColorIcons ? "#4f936f" : "#64656a"
                 break;
             case 'KRINGLOOP':
-                color = this.config.showColorIcons?"#7cbf6e":"#64656a"
+                color = this.config.showColorIcons ? "#7cbf6e" : "#64656a"
                 break;
             case 'KCA':
-                color = this.config.showColorIcons?"#e64e61":"#64656a"
+                color = this.config.showColorIcons ? "#e64e61" : "#64656a"
                 break;
             case 'GLAS':
-                color = this.config.showColorIcons?"#ffc729":"#64656a"
+                color = this.config.showColorIcons ? "#ffc729" : "#64656a"
                 break;
             default:
-                color = this.config.showColorIcons?"#64656a":"#64656a"
+                color = this.config.showColorIcons ? "#64656a" : "#64656a"
                 break;
         }
 
@@ -140,7 +143,7 @@ Module.register('MMM-Afvalwijzer', {
         span.classList.add("fa")
         span.classList.add("fa-solid")
         span.classList.add("fa-droplet")
-        span.style.color = this.config.showColorIcons?"#2a70b8":"#64656a"
+        span.style.color = this.config.showColorIcons ? "#2a70b8" : "#64656a"
         span.style.width = "24px"
         span.style.height = "24px"
         return (span)
@@ -189,9 +192,8 @@ Module.register('MMM-Afvalwijzer', {
                 iconContainer.classList.add("binday-icon-container");
                 if (trashDay.cleanprofs)
                     iconContainer.appendChild(this.getCleanprofsIcon())
-                if(this.config.showContainerIcons)
-                {
-                iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
+                if (this.config.showContainerIcons) {
+                    iconContainer.appendChild(this.getIconByTrashtype(trashDay.nameType));
                 }
 
                 pickupContainer.appendChild(iconContainer);
