@@ -57,7 +57,7 @@ Module.register("MMM-Afvalwijzer", {
     if (notification === "TRASH_DATA") {
       this.payloadReturn = payload;
       // Logging the JavaScript object
-      Log.log("PAYLOAD", this.payloadReturn.ophaaldagen.data);
+      Log.debug("PAYLOAD", this.payloadReturn.ophaaldagen.data);
       this.loaded = true;
       this.updateDom(1000);
     }
@@ -67,7 +67,7 @@ Module.register("MMM-Afvalwijzer", {
   },
   // Create icons
   getIconByTrashType(trashType) {
-    Log.log("Trashtype", trashType);
+    Log.debug("Trashtype", trashType);
 
     let color = "#64656a";
 
@@ -145,11 +145,11 @@ Module.register("MMM-Afvalwijzer", {
       wrapper.className = "dimmed light small";
       return wrapper;
     }
-    Log.log("TRASHDAYS", this.payloadReturn.ophaaldagen.data);
+    Log.debug("TRASHDAYS", this.payloadReturn.ophaaldagen.data);
     for (let i = 0; i < this.payloadReturn.ophaaldagen.data.length; i++) {
       const trashDay = this.payloadReturn.ophaaldagen.data[i];
 
-      //Log.log("Trashday",trashDay.date);
+      Log.debug("Trashday", trashDay.date);
 
       const pickupContainer = document.createElement("div");
       pickupContainer.classList.add("binday-container");
