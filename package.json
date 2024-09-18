@@ -1,6 +1,6 @@
 {
   "name": "mmm-afvalwijzer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Module for MagicMirror² to display the upcoming trashcollection days from the Afvalzijzer module.",
   "main": "MMM-Afvalwijzer.js",
   "repository": {
@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/gertperdZA/MMM-Afvalwijzer/issues"
   },
-  "homepage": "https://github.com/gertperdZA/MMM-Afvalwijzer#readme"
+  "homepage": "https://github.com/gertperdZA/MMM-Afvalwijzer#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
+  }
 }
