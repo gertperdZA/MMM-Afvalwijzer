@@ -2,6 +2,8 @@
 
 Afvalwijzer Trash collection module for [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror). Some of the code was re-used from the MMM-ROVA-trashcalendar repository. Not all cities in the Netherland uses the ROVA service, hence the reason why I decided to create this one.
 
+Please note before installing this module, head over to https://www.mijnafvalwijzer.nl first to double check if your see your schedule on your address. If you can't then means that you need to try a diferent service which is more in your region. 
+
 Shout-out to Dennis Rosenbaum for adding the Cleanprofs section. With this you can now see when the Cleanprofs company will clean the containers.
 
 ## Dependencies
